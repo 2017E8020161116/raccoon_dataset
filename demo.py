@@ -21,7 +21,7 @@ for i in range(len(data)):
     image_info = data[i].split()
     if image_info[0] == file_name: break
 
-image = cv2.imread("./images/"+image_info[0])
+image = cv2.imread(image_info[0][18:])
 n_box = len(image_info[1:]) // 5 # xmin, ymin, xmax, ymax, id
 for i in range(n_box):
     image = cv2.rectangle(image,(int(float(image_info[1+i*5])),
